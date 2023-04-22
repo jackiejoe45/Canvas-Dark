@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Canvas Dark Mode",
+    "description": "Enables a dark mode for Canvas",
+    "version": "1.0.0",
+    "icons": {
+      "16": "icon/icon_16.png",
+      "48": "icon/icon_48.png",
+      "128": "icon/icon_128.png"
+    },
+    "action": {
+      "default_icon": {
+        "16": "icon/icon_16.png",
+        "48": "icon/icon_48.png",
+        "128": "icon/icon_128.png"
+      },
+      "default_popup": "popup.html",
+      "default_title": "Canvas Dark"
+    },
+    
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.instructure.com/*",
+          "https://ashesi.instructure.com/"
+        ],
+        "js": ["content_script.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+      }
+    ],
+
+    "permissions": [
+      "tabs",
+      "activeTab"
+    ]
+    
+  }
+  
